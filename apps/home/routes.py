@@ -402,7 +402,10 @@ def route_template(template):
                 htmll+=html
                 
             return render_template("home/simulate.html",segment=segment,tables=tables,graphJSON=runsimulation(request.form),values=request.form)
-                    
+        
+        elif template=='index.html':
+            render_template('index.html')
+
         elif template=="blackjack.html":
             
             strats=pd.read_csv("bjstrat.csv")
@@ -491,6 +494,9 @@ def route_template(template):
 
 
 # Helper - Extract current page name from request
+
+
+
 def get_segment(request):
 
     try:
